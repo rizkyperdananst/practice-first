@@ -1,38 +1,98 @@
-.App {
+:root {
+  --btn-info: #3282B8;
+  --btn-danger: red;
+}
+
+body {
+  background-color: var(--btn-info);
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 100%;
+}
+
+.card {
+  width: 400px;
+  box-shadow: 0 0 5px rgb(173, 169, 169);
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.card .card-header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card .card-header img {
+  width: 150px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 10px 0;
+  /* outline: 1px solid black; */
+  box-shadow: 0 0 5px grey;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.card .card-body {
+  padding: 10px;
+}
+
+.card .card-body .form-group {
+  outline: none;
+}
+
+.card .card-body .form-group input {
+  width: 95%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 5px;
+  outline: 1px solid var(--btn-info);
+  border: none;
+}
+
+.card .card-body .form-group input:valid {
+  outline: 1px solid var(--btn-info);
+}
+
+.card .card-body .form-group input:invalid {
+  outline: 1px solid var(--btn-danger);
+}
+
+.card .card-body .form-group input:not(:focus) {
+  outline: 1px solid var(--btn-info);
+}
+
+.card .card-body .form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--btn-info);
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.card .card-body .form-group button:hover {
+  background-color: #27658f;
+}
+
+@media (min-width:200px) and (max-width:600px) {
+  .container {
+    padding: 5px;
+    width: 100%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .card {
+    width: 300px;
   }
 }
